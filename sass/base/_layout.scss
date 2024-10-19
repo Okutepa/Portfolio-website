@@ -114,6 +114,18 @@ header {
   display: flex;
 }
 
+.image-box {
+  height: 375px;
+}
+
+.image-box-2 {
+  height: 227px;
+}
+
+.box-services {
+  height: 866px;
+}
+
 @media screen and (min-width: 1200px) {
   .header-sec {
     nav {
@@ -151,5 +163,13 @@ header {
 
   #desk-hid {
     display: none;
+  }
+
+  .image-box-2 {
+    height: 375px;
+  }
+
+  .image-box-3 {
+    height: 375px;
   }
 }
