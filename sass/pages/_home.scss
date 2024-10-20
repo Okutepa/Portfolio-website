@@ -1,0 +1,110 @@
+@import "../abstracts/variables";
+
+.heading {
+  margin-bottom: 72px;
+}
+
+.text-box {
+  margin-top: 72px;
+  margin-bottom: 72px;
+}
+
+.box-move {
+  margin-bottom: 32px;
+}
+
+.dark-bg {
+  background-color: $secondary-color;
+}
+
+#player-container {
+  margin-top: 128px;
+  position: relative;
+}
+
+#big-play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+  background: transparent;
+  font-size: 60px;
+  color: $primary-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  opacity: 0.8;
+}
+
+#big-play-button.hide-button {
+  opacity: 0;
+  pointer-events: auto;
+  transform: translate(-50%, -100%); /* Moves it offscreen upwards */
+}
+
+.big-play-button:hover {
+  opacity: 1;
+}
+
+.big-play-button i {
+  font-size: 100px;
+}
+
+.section-holder-2 .video-controls {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  padding: 20px;
+  display: flex;
+
+  transition: all 0.2s ease-in-out;
+}
+
+button {
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+}
+
+.fa,
+.fa-solid {
+  color: #fff;
+  font-size: 28px;
+  margin-left: 20px;
+}
+
+.fa-stop-circle-o {
+  margin-right: 20px;
+}
+
+.fa-volume-up {
+  margin-left: 72px;
+  margin-right: 16px;
+  margin-top: 6px;
+}
+
+#timer {
+  color: $primary-color;
+  font-size: 16px;
+  margin: 4px 24px 0 0;
+}
+
+input[type="range"]#video-progress {
+  width: 50%;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  background-color: $primary-color;
+  border-radius: 0.5rem;
+  height: 0.5rem;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  margin-top: -4px; /* Centers thumb on the track */
+}

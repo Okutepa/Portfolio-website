@@ -5,9 +5,6 @@
 //We do not create styles in here
 
 @use "abstracts";
-@use "base";
+@forward "base";
 @use "components";
 @use "pages";
-
-// Import Global/Common Styles
-@import "base/layout";

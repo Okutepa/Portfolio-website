@@ -1,0 +1,188 @@
+header {
+  background-color: #ffffff;
+  padding: 16px 0;
+  margin-bottom: 0px;
+
+  .header-sec {
+    /* max-width: 1440px; */
+    margin: 0 auto;
+    padding: 0 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navigation {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .navigation {
+    ul {
+      margin-left: auto;
+      margin-top: 0;
+    }
+  }
+
+  .navigation {
+    ul {
+      li {
+        list-style: none;
+      }
+    }
+  }
+
+  .navigation {
+    ul {
+      li {
+        a {
+          text-decoration: none;
+          color: #fff;
+        }
+      }
+    }
+  }
+  .navigation {
+    ul {
+      li {
+        a:hover {
+          color: #831c20;
+        }
+      }
+    }
+  }
+}
+
+.header-sec {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-sec {
+  img {
+    height: 22px;
+    width: 96px;
+  }
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 999;
+  background-color: rgba(197, 131, 36, 0.3);
+  backdrop-filter: blur(10px);
+  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+  opacity: 1;
+  visibility: hidden;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 20px;
+}
+
+.sidebar.show {
+  transform: translateX(0);
+  visibility: visible;
+}
+
+.sidebar {
+  li {
+    padding-bottom: 32px;
+    width: 100%;
+    margin-bottom: 40px;
+  }
+}
+
+.sidebar {
+  li {
+    a {
+      font-size: 2rem;
+      width: 100%;
+    }
+  }
+}
+
+.hidemobile {
+  display: none;
+}
+
+.hideondesktop {
+  display: flex;
+}
+
+.image-box {
+  height: 375px;
+}
+
+.image-box-2 {
+  height: 227px;
+}
+
+.box-services {
+  height: 866px;
+}
+
+.box {
+  width: 100%;
+  overflow: hidden;
+
+  img {
+    width: 100%; /* Make the image take up the full width of the div */
+    height: 100%; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure the image fits within the div without stretching */
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .header-sec {
+    nav {
+      ul {
+        display: flex;
+
+        li {
+          list-style: none;
+          padding-right: 32px;
+
+          &:last-child {
+            padding-right: 0;
+          }
+
+          a {
+            text-decoration: none;
+            color: #000;
+
+            &:hover {
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .hidemobile {
+    display: flex;
+  }
+
+  .hideondesktop {
+    display: none;
+  }
+
+  #desk-hid {
+    display: none;
+  }
+
+  .image-box-2 {
+    height: 375px;
+  }
+
+  .image-box-3 {
+    height: 375px;
+  }
+}

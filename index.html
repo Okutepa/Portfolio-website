@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <link rel="stylesheet" href="css/grid.css" />
     <link rel="stylesheet" href="css/main.css" />
     <title>Portfolio Homepage</title>
@@ -63,9 +67,9 @@
     </header>
 
     <main>
-      <section>
+      <section class="heading">
         <div class="grid-con">
-          <div class="col-span-full box">
+          <div class="col-span-full l-col-start-3 l-col-span-8 box">
             <p>responsive text box</p>
           </div>
         </div>
@@ -73,15 +77,27 @@
 
       <section>
         <div class="grid-con">
-          <div
-            class="col-span-full l-col-start-1 l-col-span-7 image-box box"
-          ></div>
+          <div class="col-span-full l-col-start-1 l-col-span-7 image-box box">
+            <picture>
+              <source
+                srcset="images/image-placeholder-1.jpeg"
+                media="(min-width: 474px)"
+              />
+              <img src="images/image-placeholder-1.jpeg" alt="wisdom logo" />
+            </picture>
+          </div>
 
-          <div
-            class="col-span-full l-col-start-8 l-col-span-5 image-box-2 box"
-          ></div>
+          <div class="col-span-full l-col-start-8 l-col-span-5 image-box-2 box">
+            <picture>
+              <source
+                srcset="images/image-placeholder-1.jpeg"
+                media="(min-width: 474px)"
+              />
+              <img src="images/image-placeholder-1.jpeg" alt="wisdom logo" />
+            </picture>
+          </div>
 
-          <div class="col-span-full text-box box">
+          <div class="col-span-full l-col-start-4 l-col-span-6 text-box box">
             <p>
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae
               magnam a aperiam maxime quisquam quam distinctio dicta iste, quis
@@ -91,18 +107,68 @@
             </p>
           </div>
 
-          <div class="col-span-full image-box-3 box"></div>
+          <div class="col-span-full image-box-3 box-move box">
+            <picture>
+              <source
+                srcset="images/image-placeholder-1.jpeg"
+                media="(min-width: 474px)"
+              />
+              <img src="images/image-placeholder-1.jpeg" alt="wisdom logo" />
+            </picture>
+          </div>
           <div class="col-span-full l-col-start-1 l-col-span-7 image-box-3 box">
-            Project
+            <picture>
+              <source
+                srcset="images/image-placeholder-1.jpeg"
+                media="(min-width: 474px)"
+              />
+              <img src="images/image-placeholder-1.jpeg" alt="wisdom logo" />
+            </picture>
           </div>
           <div class="col-span-full l-col-start-8 l-col-span-5 image-box-2 box">
-            Project
+            <picture>
+              <source
+                srcset="images/image-placeholder-1.jpeg"
+                media="(min-width: 474px)"
+              />
+              <img src="images/image-placeholder-1.jpeg" alt="wisdom logo" />
+            </picture>
           </div>
         </div>
       </section>
 
-      <section>
+      <section class="dark-bg">
         <div class="grid-con">
+          <div id="player-container" class="col-span-full">
+            <video controls preload="metadata" poster="images/Video.png">
+              <source src="video/hackathon_video.mp4" type="video/mp4" />
+            </video>
+            <button id="big-play-button" class="big-play-button">
+              <i class="fa fa-play-circle-o"></i>
+            </button>
+            <div class="video-controls hidden" id="video-controls">
+              <span id="timer">00:00</span>
+              <input
+                type="range"
+                id="video-progress"
+                min="0"
+                max="100"
+                step="1"
+                value="0"
+              />
+              <i class="fa fa-volume-up"></i>
+              <input
+                type="range"
+                id="change-vol"
+                step="0.05"
+                min="0"
+                max="1"
+                value="1"
+              />
+
+              <button id="full-screen"><i class="fa fa-arrows-alt"></i></button>
+            </div>
+          </div>
           <div class="col-span-full text-box box box-services">Services</div>
         </div>
       </section>
