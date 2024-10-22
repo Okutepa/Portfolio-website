@@ -1,7 +1,45 @@
-@import "../abstracts/variables";
+@import "../abstracts";
 
 .heading {
   margin-bottom: 72px;
+  text-align: left;
+
+  h1 {
+    margin-bottom: 32px;
+  }
+
+  span {
+    background-image: linear-gradient(182deg, #c58324 52%, #ffd599 90%);
+    background-size: 100%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+  }
+}
+
+.projects {
+  .description {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    p {
+      color: $primary-color;
+    }
+  }
+
+  .mission {
+    margin-top: 72px;
+    margin-left: 56px;
+    margin-right: 56px;
+    margin-bottom: 72px;
+
+    p:first-of-type {
+      margin-bottom: 16px;
+    }
+  }
 }
 
 .text-box {
@@ -60,7 +98,6 @@
   bottom: 0;
   padding: 20px;
   display: flex;
-
   transition: all 0.2s ease-in-out;
 }
 
@@ -107,4 +144,34 @@ input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none; /* Override default look */
   appearance: none;
   margin-top: -4px; /* Centers thumb on the track */
+}
+
+@media screen and (min-width: 1200px) {
+  .heading {
+    text-align: center;
+    margin-top: 128px;
+    margin-bottom: 0;
+
+    h4 {
+      width: 800px;
+    }
+
+    h5 {
+      display: block;
+      margin-bottom: 16px;
+    }
+  }
+
+  .project-display {
+    margin-top: 128px;
+    .projects {
+      .description {
+        .underline {
+          width: 65%;
+          height: 0px;
+          border: 1px solid $secondary-color;
+        }
+      }
+    }
+  }
 }

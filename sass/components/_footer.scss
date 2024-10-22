@@ -1,0 +1,85 @@
+@import "../abstracts";
+
+.foot {
+  background-color: $secondary-color;
+  color: $highlight-text-color;
+  text-align: center;
+  padding: 90px 0;
+  margin: 64px auto;
+  border-radius: 18px;
+
+  .foot-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h2 {
+      font-size: 3rem;
+      font-weight: 400;
+      line-height: 48px;
+      margin: 32px 0 40px 0;
+    }
+
+    .footer-nav {
+      margin: 32px 0;
+      ul {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        li {
+          list-style: none;
+          margin-bottom: 24px;
+          a {
+            text-decoration: none;
+            color: $highlight-text-color;
+            font-weight: 200;
+          }
+
+          a:hover {
+            color: $primary-color;
+          }
+        }
+        li:last-of-type {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .foot {
+    text-align: center;
+    padding: 90px 0;
+    margin: 64px auto;
+    border-radius: 30px;
+
+    .foot-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      h2 {
+        font-size: 4.5rem;
+        font-weight: 400;
+        line-height: 72px;
+        padding: 0 300px;
+        margin: 32px 0 40px 0;
+      }
+      .footer-nav {
+        margin: 72px 0;
+        ul {
+          display: flex;
+          flex-direction: row;
+          li {
+            margin-right: 128px;
+            list-style: none;
+          }
+          li:last-of-type {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+}
