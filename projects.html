@@ -3,9 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Contact Me</title>
 </head>
 <body>
-    
+    <header>
+        <div class="header-sec grid-con">
+          <nav class="navigation col-span-full l-col-start-">
+            <picture>
+              <source srcset="images/Logo.svg" media="(min-width: 474px)" />
+              <img src="images/logo-mobile.svg" alt="wisdom logo" />
+            </picture>
+  
+            <ul class="sidebar" id="desk-hid">
+              <li>
+                <a href="#"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24px"
+                    viewBox="0 -960 960 960"
+                    width="24px"
+                    fill="#e8eaed"
+                  >
+                    <path
+                      d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+                    /></svg
+                ></a>
+              </li>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Me</a></li>
+              <li><a href="projects.html">Projects</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+  
+            <ul>
+              <li class="hidemobile"><a href="index.html">Home</a></li>
+              <li class="hidemobile"><a href="about.html">About Me</a></li>
+              <li class="hidemobile"><a href="projects.html">Projects</a></li>
+              <li class="hidemobile"><a href="contact.html">Contact</a></li>
+              <li class="hideondesktop">
+                <a href="#"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="24px"
+                    viewBox="0 -960 960 960"
+                    width="24px"
+                    fill="#000"
+                  >
+                    <path
+                      d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
+                    />
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+  
+      <script src="js/main.js"></script>
 </body>
 </html>
