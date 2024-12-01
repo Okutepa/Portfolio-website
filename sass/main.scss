@@ -5,6 +5,6 @@
 //We do not create styles in here
 
 @use "abstracts";
-@forward "base";
+@use "base";
 @use "components";
 @use "pages";

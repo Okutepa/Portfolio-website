@@ -1,0 +1,144 @@
+@use '../abstracts/' as a;
+
+body {
+    .hero-text {
+        p {
+            margin-top: 32px;
+            margin-bottom: 72px;
+        }
+    }
+
+    .hero-pt-2 {
+        img {
+            width: 100%;
+            margin-bottom: 72px;
+        }
+        
+        .special-case {
+            margin-top: 16px;
+            margin-bottom: 16px;
+        }
+    }
+
+    .more-about {
+        padding-top: 72px;
+        padding-bottom: 72px;
+
+        .more-about-1 {
+           display: flex;
+           flex-direction: column;
+           gap: 32px;
+        }
+
+        .more-about-2 {
+            h2 {
+                margin-top: 40px;
+                margin-bottom: 72px;
+                width: 280px;
+            }
+            h3 {
+                opacity: 0.30;
+            }
+
+            h4 {
+                opacity: 1;
+                margin-bottom: 32px;
+                width: 280px;
+                max-width: 440px;
+            }
+
+            p {
+                margin-bottom: 48px;
+            }
+        }
+    }
+
+    .divisor {
+        border: 1px solid #fff;
+        width: 100%;
+        margin: 16px 0;
+    }
+
+    .beyond-work {
+        padding-top: 72px;
+        padding-bottom: 72px;
+
+        .beyond-work-1 {
+            img {
+                margin-bottom: 32px;
+            }
+        }
+
+        .beyond-work-2 {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            margin: 32px auto;
+            
+            p {
+                opacity: 0.48;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    body{
+
+        .main-sec {
+            padding-bottom: 72px;
+        }
+        .hero-text {
+            margin-top: 130px;
+            
+            h1 {
+                width: 528px;
+            }
+        }
+
+        .hero-pt-2 {
+            h2 {
+                max-width: 492px;
+            }
+            p {
+                max-width: 812px;
+            }
+        }
+
+        .more-about {
+            .more-about-1 {
+               flex-direction: row;
+            }
+        }
+
+        #move {
+            grid-row: 3;
+        }
+
+        #move-2 {
+            grid-row: 4;
+        }
+
+
+        .beyond-work {
+            .beyond-work-2 {
+                flex-direction: row;
+                gap: 32px;
+                margin: 72px auto;
+
+                h2 {
+                    flex-grow: 3;
+                }
+                
+                p {
+                    font-size: 2rem;
+                    font-weight: 400;
+                    letter-spacing: 0.48px;
+                    line-height: 130%;
+                    width: 50%;
+                }
+            }
+        }
+        
+    }
+}
