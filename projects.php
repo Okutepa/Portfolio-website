@@ -1,3 +1,27 @@
+<?php
+require_once('includes/connect.php');
+
+// Get and sanitize the project ID from the URL
+$project_id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
+
+// Query to fetch the project details
+$project_query = "SELECT * FROM projects WHERE project_id = $project_id";
+$project_results = mysqli_query($connect, $project_query);
+
+// Check if the project exists
+if (mysqli_num_rows($project_results) > 0) {
+    $project = mysqli_fetch_assoc($project_results);
+} else {
+    echo "Project not found.";
+    exit; // Exit if no project was found
+}
+
+// Query to fetch responsive images for the project
+$image_query = "SELECT * FROM media WHERE project_id = $project_id";
+$image_results = mysqli_query($connect, $image_query);
+$images = mysqli_fetch_all($image_results, MYSQLI_ASSOC);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -69,26 +93,20 @@
         </section>
 
         <section class="grid-con">
-            <a href="case-study.html" class="col-span-full l-col-start-1 l-col-span-7 image-box box">
-                <picture>
-                    <source srcset="images/hilite-buds-desktop-2.png" media="(min-width: 474px)" />
-                    <img src="images/hilite-buds-mobile.png" alt="wisdom logo" />
-                </picture>
-            </a>
+    <?php foreach ($images as $image): ?>
+        <a href="case-study.php?id=<?php echo $project_id; ?>" class="col-span-full l-col-start-1 l-col-span-7 image-box box">
+            <picture>
+                <?php if ($image['media_type'] === 'desktop'): ?>
+                    <source srcset="images/<?php echo $image['image_name']; ?>" media="(min-width: 474px)">
+                <?php elseif ($image['media_type'] === 'mobile'): ?>
+                    <img src="images/<?php echo $image['image_name']; ?>" alt="Project Image">
+                <?php endif; ?>
+            </picture>
+        </a>
+    <?php endforeach; ?>
+</section>
 
-
-
-            <a href="case-study.html" class="col-span-full l-col-start-8 l-col-span-5 image-box-2 box">
-
-                <picture>
-                    <source srcset="images/hilite-buds-desktop.png" media="(min-width: 474px)" />
-                    <img src="images/hilite-buds-mobile-2.png" alt="wisdom logo" />
-                </picture>
-
-            </a>
-        </section>
-
-        <section class="challenge grid-con">
+        <!-- <section class="challenge grid-con">
             <div class="projects col-span-full l-col-start-3 l-col-span-8">
                 <h3>Challenge</h3>
                 <p id="no-move">
@@ -153,7 +171,7 @@
                     establishing a more trendy and slightly moody website.
                 </p>
             </div>
-        </section>
+        </section> -->
 
 
 
@@ -183,5 +201,3 @@
     <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
     <script src="js/main.js"></script>
 </body>
-
-</html>
