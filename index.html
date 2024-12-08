@@ -1,368 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <link rel="stylesheet" href="css/grid.css" />
-    <link rel="stylesheet" href="css/main.css" />
-    <title>Portfolio Homepage</title>
-  </head>
-  <body>
-    <header>
-      <div class="header-sec grid-con">
-        <nav class="navigation col-span-full l-col-start-">
-          <picture>
-            <source srcset="images/Logo.svg" media="(min-width: 474px)" />
-            <img src="images/logo-mobile.svg" alt="wisdom logo" />
-          </picture>
 
-          <ul class="sidebar" id="desk-hid">
-            <li>
-              <a href="#"
-                ><svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="24px"
-                  viewBox="0 -960 960 960"
-                  width="24px"
-                  fill="#e8eaed"
-                >
-                  <path
-                    d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
-                  /></svg
-              ></a>
-            </li>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Me</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="css/grid.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <title>Portfolio Homepage</title>
+</head>
 
-          <ul>
-            <li class="hidemobile"><a href="index.html">Home</a></li>
-            <li class="hidemobile"><a href="#">About Me</a></li>
-            <li class="hidemobile"><a href="#">Projects</a></li>
-            <li class="hidemobile"><a href="#">Contact</a></li>
-            <li class="hideondesktop">
-              <a href="#"
-                ><svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="24px"
-                  viewBox="0 -960 960 960"
-                  width="24px"
-                  fill="#000"
-                >
-                  <path
-                    d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
-                  />
-                </svg>
-              </a>
-            </li>
-          </ul>
-        </nav>
+<body>
+  <header>
+    <div class="header-sec grid-con">
+      <nav class="navigation col-span-full l-col-start-">
+        <picture>
+          <source srcset="images/Logo.svg" media="(min-width: 474px)" />
+          <img src="images/logo-mobile.svg" alt="wisdom logo" />
+        </picture>
+
+        <ul class="sidebar" id="desk-hid">
+          <li>
+            <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                fill="#e8eaed">
+                <path
+                  d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+              </svg></a>
+          </li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Me</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <ul>
+          <li class="hidemobile"><a href="index.html">Home</a></li>
+          <li class="hidemobile"><a href="about.html">About Me</a></li>
+          <li class="hidemobile"><a href="projects.html">Projects</a></li>
+          <li class="hidemobile"><a href="contact.html">Contact</a></li>
+          <li class="hideondesktop">
+            <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                fill="#000">
+                <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="grid-con">
+        <div class="heading col-span-full l-col-start-3 l-col-span-8">
+          <h1>
+            Creative <br />
+            <span class="gradient-text">Ui/Ux designer</span>
+          </h1>
+          <h4>
+            A UI/UX designer who’s passionate about creating visually
+            appealing and User friendly digital experiences.
+          </h4>
+        </div>
       </div>
-    </header>
+    </section>
 
-    <main>
+    <section class="project-display">
+      <div class="grid-con projects">
+        <div class="col-span-full description">
+          <p>(Recent work)</p>
+          <div class="underline"></div>
+          <p>(Selected work)</p>
+        </div>
+
+        <a href="case-study.html" class="col-span-full l-col-start-1 l-col-span-7 image-box box">
+          <picture>
+            <source srcset="images/hilite-buds-desktop-2.png" media="(min-width: 474px)" />
+            <img src="images/hilite-buds-mobile.png" alt="wisdom logo" />
+          </picture>
+        </a>
+
+        <a href="case-study.html" class="col-span-full l-col-start-8 l-col-span-5 image-box-2 box">
+          <picture>
+            <source srcset="images/hilite-buds-desktop.png" media="(min-width: 474px)" />
+            <img src="images/hilite-buds-mobile-2.png" alt="wisdom logo" />
+          </picture>
+        </a>
+        <div class="col-span-full description">
+          <p>(Hilite Wireless Earbuds Project)</p>
+
+          <p>(2024)</p>
+        </div>
+
+
+        <div class="col-span-full l-col-start-3 l-col-span-8 mission">
+          <div class="background" id="stubborn">
+            <p>
+              As an experienced UX designer, I have a deep understanding of
+              creating user-centered digital products and services that provide
+              exceptional user experiences.
+            </p>
+
+            <p>
+              My design process is rooted in empathy, research, and a
+              data-driven approach to ensure every solution I craft resonates
+              with end-users.
+            </p>
+          </div>
+        </div>
+
+
+
+        <a href="" class="col-span-full image-box-3 box-move box">
+          <picture>
+            <source srcset=" images/hackathon-desktop.png" media="(min-width: 474px)" />
+            <img src="images/hackathon-mobile.png" alt="wisdom logo" />
+          </picture>
+        </a>
+
+
+        <div class="col-span-full description" id="hack">
+          <p>(Recent work)</p>
+          <p>(Recent work)</p>
+        </div>
+
+
+        <div class="col-span-full description">
+          <p>(Recent work)</p>
+          <p>(Recent work)</p>
+        </div>
+
+        <a href="case-study.html" class="col-span-full l-col-start-1 l-col-span-7 image-box-3 box">
+          <picture>
+            <source srcset="images/zima-project-desktop-1.png" media="(min-width: 474px)" />
+            <img src="images/zima-project-mobile-1.png" alt="wisdom logo" />
+          </picture>
+        </a>
+
+        <a href="case-study.html" class="col-span-full l-col-start-8 l-col-span-5 image-box-2 box">
+          <picture>
+            <source srcset="images/zima-project-desktop-2.png" media="(min-width: 474px)" />
+            <img src="images/zima-project-mobile-2.png" alt="wisdom logo" />
+          </picture>
+        </a>
+
+
+        <div class="col-span-full description">
+          <p>(Recent work)</p>
+          <p>(Recent work)</p>
+        </div>
+
+        <button class="col-span-full l-col-start-5 l-col-span-4 projects-btn">More projects</button>
+      </div>
+    </section>
+
+
+    <div class="dark-bg">
       <section>
         <div class="grid-con">
-          <div class="heading col-span-full l-col-start-3 l-col-span-8">
-            <h5 class="title-des hidden">Title description</h5>
-            <h1>
-              Creative <br />
-              <span class="gradient-text">Ui/Ux designer</span>
-            </h1>
-            <h4>
-              A UI/UX designer who’s passionate about creating visually
-              appealing and User friendly digital experiences.
+          <section id="player-container" class="col-span-full">
+            <video class="player" controls data-poster="images/placeholder.jpg">
+              <source src="video/wisdom_okutepa_demoreel.mp4" type="video/mp4">
+              <source src="video/wisdom_okutepa_demoreel.webm" type="video/webm">
+              <p>Your browser does not support the video tag.</p>
+            </video>
+          </section>
+        </div>
+      </section>
+
+      <section class="services">
+        <div class="grid-con">
+          <div class="col-span-full services-0">
+            <h2>Services</h2>
+
+            <div class="divisor"></div>
+
+          </div>
+
+          <div class="col-span-full services-1">
+            <h3 class="drop">01</h3>
+            <h3>UI design / UX design</h3>
+            <p>
+              If you already have a design language in place, I'll seamlessly integrate it into your digital
+              experience. If it's still in development, I'll guide the art direction while crafting the homepage. All
+              designs are tailored for both desktop and mobile, ensuring a cohesive and responsive user experience.
+            </p>
+          </div>
+
+          <div class="divisor col-span-full"></div>
+
+          <div class="col-span-full services-1">
+            <h3 class="drop">02</h3>
+            <h3>Web development / Web design</h3>
+            <p>
+              Whether you're starting from scratch or looking to revamp an existing site, I'll handle the entire process
+              from concept to deployment. I'll ensure your website is not only visually engaging but also functionally
+              robust, with seamless integration across desktop and mobile platforms.
+            </p>
+          </div>
+
+          <div class="divisor col-span-full"></div>
+
+          <div class="col-span-full l-col-start-3 l-col-span-8 quote">
+            <h4>Good design is not just about how it looks; it's about how it works. When done right, design transcends
+              aesthetics and becomes an experience that empowers users, drives engagement, and creates lasting
+              connections.
             </h4>
           </div>
         </div>
       </section>
+    </div>
 
-      <section class="project-display">
-        <div class="grid-con projects">
-          <div class="col-span-full description">
-            <p>(Recent work)</p>
-            <div class="underline"></div>
-            <p>(Recent work)</p>
-          </div>
-          <div class="col-span-full l-col-start-1 l-col-span-7 image-box box">
-            <picture>
-              <source
-                srcset="images/image-placeholder-1.jpeg"
-                media="(min-width: 474px)"
-              />
-              <img src="images/image-placeholder-1.jpeg" alt="wisdom logo" />
-            </picture>
-          </div>
 
-          <div class="col-span-full l-col-start-8 l-col-span-5 image-box-2 box">
-            <picture>
-              <source
-                srcset="images/image-placeholder-1.jpeg"
-                media="(min-width: 474px)"
-              />
-              <img src="images/image-placeholder-1.jpeg" alt="wisdom logo" />
-            </picture>
-          </div>
-          <div class="col-span-full description">
-            <p>(Recent work)</p>
-            <div><p>Lorem ipsum dolor sit amet consectetur.</p></div>
-            <p>(Recent work)</p>
-          </div>
 
-          <div class="col-span-full l-col-start-4 l-col-span-6 mission">
-            <p>
-              As an experienced UX designer, I have a deep understanding of
-              creating user-centered digital products and services that provide
-              exceptional user experiences.
-            </p>
 
-            <p>
-              My design process is rooted in empathy, research, and a
-              data-driven approach to ensure every solution I craft resonates
-              with end-users.
-            </p>
-          </div>
 
-          <div class="col-span-full description">
-            <p>(Recent work)</p>
-            <p>(Recent work)</p>
-          </div>
+  </main>
+  <footer>
+    <div class="grid-con foot">
+      <div class="col-span-full foot-content">
+        <h5>Connect</h5>
+        <h2>Let’s create your next big idea.</h2>
+        <button class="btn">Get in touch</button>
 
-          <div class="col-span-full image-box-3 box-move box">
-            <picture>
-              <source
-                srcset="images/image-placeholder-1.jpeg"
-                media="(min-width: 474px)"
-              />
-              <img src="images/image-placeholder-1.jpeg" alt="wisdom logo" />
-            </picture>
-          </div>
+        <nav class="footer-nav">
+          <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">About me</a></li>
+            <li><a href="">Projects</a></li>
+            <li><a href="">Contact</a></li>
+          </ul>
+        </nav>
 
-          <div class="col-span-full description">
-            <p>(Recent work)</p>
-            <p>(Recent work)</p>
-          </div>
-
-          <div class="col-span-full description">
-            <p>(Recent work)</p>
-            <p>(Recent work)</p>
-          </div>
-
-          <div class="col-span-full l-col-start-1 l-col-span-7 image-box-3 box">
-            <picture>
-              <source
-                srcset="images/image-placeholder-1.jpeg"
-                media="(min-width: 474px)"
-              />
-              <img src="images/image-placeholder-1.jpeg" alt="wisdom logo" />
-            </picture>
-          </div>
-          <div class="col-span-full l-col-start-8 l-col-span-5 image-box-2 box">
-            <picture>
-              <source
-                srcset="images/image-placeholder-1.jpeg"
-                media="(min-width: 474px)"
-              />
-              <img src="images/image-placeholder-1.jpeg" alt="wisdom logo" />
-            </picture>
-          </div>
-
-          <div class="col-span-full description">
-            <p>(Recent work)</p>
-            <p>(Recent work)</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="dark-bg">
-        <div class="grid-con">
-          <div id="player-container" class="col-span-full">
-            <video controls preload="metadata" poster="images/Video.png">
-              <source src="video/hackathon_video.mp4" type="video/mp4" />
-            </video>
-            <button id="big-play-button" class="big-play-button">
-              <i class="fa fa-play-circle-o"></i>
-            </button>
-            <div class="video-controls hidden" id="video-controls">
-              <span id="timer">00:00</span>
-              <input
-                type="range"
-                id="video-progress"
-                min="0"
-                max="100"
-                step="1"
-                value="0"
-              />
-              <i class="fa fa-volume-up"></i>
-              <input
-                type="range"
-                id="change-vol"
-                step="0.05"
-                min="0"
-                max="1"
-                value="1"
-              />
-
-              <button id="full-screen"><i class="fa fa-arrows-alt"></i></button>
-            </div>
-          </div>
-          <div class="col-span-full text-box box box-services">Services</div>
-        </div>
-      </section>
-      <!-- <section>
-        <div class="grid-con">
-          <p>Title Description</p>
-          <h1>Creative Ui/Ux designer</h1>
-          <p>
-            A UI/UX designer who's passionate about creating visually appealing
-            and User friendly digital experiences
-          </p>
-        </div>
-      </section>
-
-      <section>
-        <div class="grid-con">
-          <div>
-            <div>
-              <p>(Recent work)</p>
-              <div class="underline"></div>
-              <p>(Selected work)</p>
-            </div>
-
-            <div>
-              <div>
-                <img src="" alt="" />
-              </div>
-
-              <div>
-                <img src="" alt="" />
-              </div>
-            </div>
-
-            <div>
-              <p>Project name</p>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
-              <p>2024</p>
-            </div>
-          </div>
-
-          <div>
-            <p>
-              As an experienced UX designer, I have a deep understanding of
-              creating user-centered digital products and services that provide
-              exceptional user experiences.
-            </p>
-
-            <p>
-              My design process is rooted in empathy, research, and a
-              data-driven approach to ensure every solution I craft resonates
-              with end-users.
-            </p>
-          </div>
-
-          <div>
-            <div>
-              <div>
-                <img src="" alt="" />
-              </div>
-            </div>
-
-            <div>
-              <p>Project name</p>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
-              <p>2024</p>
-            </div>
-          </div>
-
-          <div>
-            <div>
-              <div>
-                <img src="" alt="" />
-              </div>
-
-              <div>
-                <img src="" alt="" />
-              </div>
-            </div>
-
-            <div>
-              <p>Project name</p>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
-              <p>2024</p>
-            </div>
-          </div>
-
-          <button>More projects</button>
-        </div>
-      </section>
-
-      <section>
-        <div class="grid-con">
-          <h2>Services</h2>
-          <div class="underline"></div>
-          <div>
-            <h2>01.</h2>
-            <h2>UI Design <br />/UX design</h2>
-            <p>
-              If you already have a design language in place, I'll seamlessly
-              integrate it into your digital experience. If it's still in
-              development, I'll guide the art direction while crafting the
-              homepage. All designs are tailored for both desktop and mobile,
-              ensuring a cohesive and responsive user experience.
-            </p>
-          </div>
-
-          <div class="underline"></div>
-
-          <div>
-            <h2>02.</h2>
-            <h2>Web development <br />/Web design</h2>
-            <p>
-              Whether you're starting from scratch or looking to revamp an
-              existing site, I'll handle the entire process from concept to
-              deployment. I'll ensure your website is not only visually engaging
-              but also functionally robust, with seamless integration across
-              desktop and mobile platforms.
-            </p>
-          </div>
-
-          <div class="underline"></div>
-
-          <p>
-            Good design is not just about how it looks; it's about how it works.
-            When done right, design transcends aesthetics and becomes an
-            experience that empowers users, drives engagement, and creates
-            lasting connections.
-          </p>
-        </div>
-      </section> -->
-    </main>
-    <footer>
-      <div class="grid-con foot">
-        <div class="col-span-full foot-content">
-          <h5>Connect</h5>
-          <h2>Let’s create your next big idea.</h2>
-          <button class="btn">Get in touch</button>
-
-          <nav class="footer-nav">
-            <ul>
-              <li><a href="">Home</a></li>
-              <li><a href="">About me</a></li>
-              <li><a href="">Projects</a></li>
-              <li><a href="">Contact</a></li>
-            </ul>
-          </nav>
-
-          <p>© 2024 Wisdom</p>
-        </div>
+        <p>© 2024 Wisdom</p>
       </div>
-    </footer>
-    <script src="js/main.js"></script>
-  </body>
+    </div>
+  </footer>
+
+  <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
 </html>

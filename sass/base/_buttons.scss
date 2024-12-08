@@ -17,3 +17,25 @@
   border: 2px solid $secondary-color;
   transform: scale(1.1);
 }
+
+.projects-btn {
+  background-color: rgba(255, 255, 255, 0.00);
+  border: 2px solid #091116;
+  color: #091116;
+  border-radius: 20px;
+  padding: 16px 32px;
+  transition: background-color 0.3s ease-in,
+}
+
+.projects-btn:hover {
+  background-color: #091116;
+  color: #fff;
+}
+
+@media screen and (min-width: 1200px) {
+  .projects-btn {
+    font-size: 32px;
+    padding: 22px 42px;
+    border-radius: 32px;
+  }
+}

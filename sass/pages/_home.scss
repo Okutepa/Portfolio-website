@@ -1,179 +1,336 @@
 @use '../abstracts/' as a;
 @use '../components/' as b;
 
-span.gradient-text  {
-  background-image: linear-gradient(182deg, #c58324 52%, #ffd599 90%);
-  background-size: 100%;
-  background-repeat: repeat;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-background-clip: text;
-  -moz-text-fill-color: transparent;
-}
-
-.heading {
-  margin-bottom: 72px;
-  text-align: left;
-
-  h1 {
-    margin-bottom: 32px;
-  }
-}
-
-.projects {
-  .description {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    p {
-      color: a.$primary-color;
-    }
+body {
+  span.gradient-text {
+    background-image: linear-gradient(182deg, #c58324 52%, #ffd599 90%);
+    background-size: 100%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+    font-size: a.$font-primary;
   }
 
-  .mission {
-    margin-top: 72px;
-    margin-left: 56px;
-    margin-right: 56px;
-    margin-bottom: 72px;
+  .heading {
+    margin-top: 128px;
+    margin-bottom: 128px;
+    text-align: center;
 
-    p:first-of-type {
+    h1 {
+      font-size: 48px;
+      line-height: 1.2;
       margin-bottom: 16px;
     }
-  }
-}
-
-.text-box {
-  margin-top: 72px;
-  margin-bottom: 72px;
-}
-
-.box-move {
-  margin-bottom: 32px;
-}
-
-.dark-bg {
-  background-color: a.$secondary-color;
-  color: #fff;
-}
-
-#player-container {
-  margin-top: 128px;
-  position: relative;
-}
-
-#big-play-button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border: none;
-  background: transparent;
-  font-size: 60px;
-  color: a.$primary-color;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: opacity 0.2s ease, transform 0.2s ease;
-  opacity: 0.8;
-}
-
-#big-play-button.hide-button {
-  opacity: 0;
-  pointer-events: auto;
-  transform: translate(-50%, -100%); /* Moves it offscreen upwards */
-}
-
-.big-play-button:hover {
-  opacity: 1;
-}
-
-.big-play-button i {
-  font-size: 100px;
-}
-
-.section-holder-2 .video-controls {
-  position: absolute;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  padding: 20px;
-  display: flex;
-  transition: all 0.2s ease-in-out;
-}
-
-button {
-  padding: 0;
-  border: 0;
-  background-color: transparent;
-}
-
-.fa,
-.fa-solid {
-  color: #fff;
-  font-size: 28px;
-  margin-left: 20px;
-}
-
-.fa-stop-circle-o {
-  margin-right: 20px;
-}
-
-.fa-volume-up {
-  margin-left: 72px;
-  margin-right: 16px;
-  margin-top: 6px;
-}
-
-#timer {
-  color: a.$primary-color;
-  font-size: 16px;
-  margin: 4px 24px 0 0;
-}
-
-input[type="range"]#video-progress {
-  width: 50%;
-}
-
-input[type="range"]::-webkit-slider-runnable-track {
-  background-color: a.$primary-color;
-  border-radius: 0.5rem;
-  height: 0.5rem;
-}
-
-input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none; /* Override default look */
-  appearance: none;
-  margin-top: -4px; /* Centers thumb on the track */
-}
-
-@media screen and (min-width: 1200px) {
-  .heading {
-    text-align: center;
-    margin-top: 128px;
-    margin-bottom: 0;
 
     h4 {
-      width: 800px;
-    }
-
-    h5 {
-      display: block;
-      margin-bottom: 16px;
+      font-size: 16px;
+      line-height: 25px;
+      font-style: normal;
+      font-weight: 400;
     }
   }
 
   .project-display {
-    margin-top: 128px;
     .projects {
+
+      .btn {
+        margin: 32px auto;
+        font-size: 1rem;
+        padding: 16px 32px;
+      }
+
       .description {
-        .underline {
-          width: 65%;
-          height: 0px;
-          border: 1px solid a.$secondary-color;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        p {
+          color: #000;
+        }
+      }
+
+      .mission {
+        margin-top: 72px;
+        margin-left: 56px;
+        margin-right: 56px;
+        margin-bottom: 72px;
+        position: relative;
+
+        .background {
+          position: absolute;
+          background-color: #091116;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width: 100vw;
+          height: 632px;
+          left: -70px;
+          padding: 0 48px;
+          z-index: -1;
+
+          p {
+            color: #fff;
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 32px;
+          }
+
+          p:first-of-type {
+            margin-bottom: 24px;
+          }
         }
       }
     }
+
+  }
+
+  .text-box {
+    margin-top: 72px;
+    margin-bottom: 72px;
+  }
+
+  #hack {
+    margin-bottom: 128px;
+  }
+
+  .box-move {
+    margin-bottom: 32px;
+    margin-top: 680px;
+  }
+
+  .dark-bg {
+    background-color: a.$secondary-color;
+    color: #fff;
+  }
+
+  .projects-btn {
+    margin: 44px auto 128px auto;
+  }
+
+  #player-container {
+    margin-top: 128px;
+    position: relative;
+  }
+
+  #big-play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    background: transparent;
+    font-size: 60px;
+    color: a.$primary-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    opacity: 0.8;
+  }
+
+  #big-play-button.hide-button {
+    opacity: 0;
+    pointer-events: auto;
+    transform: translate(-50%, -100%);
+    /* Moves it offscreen upwards */
+  }
+
+  .big-play-button:hover {
+    opacity: 1;
+  }
+
+  .big-play-button i {
+    font-size: 100px;
+  }
+
+  .section-holder-2 .video-controls {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    padding: 20px;
+    display: flex;
+    transition: all 0.2s ease-in-out;
+  }
+
+  button {
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+  }
+
+  .fa,
+  .fa-solid {
+    color: #fff;
+    font-size: 28px;
+    margin-left: 20px;
+  }
+
+  .fa-stop-circle-o {
+    margin-right: 20px;
+  }
+
+  .fa-volume-up {
+    margin-left: 72px;
+    margin-right: 16px;
+    margin-top: 6px;
+  }
+
+  #timer {
+    color: a.$primary-color;
+    font-size: 16px;
+    margin: 4px 24px 0 0;
+  }
+
+  input[type="range"]#video-progress {
+    width: 50%;
+  }
+
+  input[type="range"]::-webkit-slider-runnable-track {
+    background-color: a.$primary-color;
+    border-radius: 0.5rem;
+    height: 0.5rem;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    /* Override default look */
+    appearance: none;
+    margin-top: -4px;
+    /* Centers thumb on the track */
+  }
+
+  .services {
+
+    .services-0 {
+      h2 {
+        text-align: center;
+        margin-bottom: 24px;
+        margin-top: 36px;
+      }
+    }
+
+    .services-1 {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+
+      .drop {
+        opacity: 0.08;
+        margin-top: 32px;
+      }
+
+      p {
+        margin-bottom: 32px;
+      }
+    }
+
+    .quote {
+      margin: 48px auto 72px auto;
+    }
+  }
+
+}
+
+@media screen and (min-width: 1200px) {
+  body {
+
+    .heading {
+      text-align: center;
+
+      h1 {
+        font-size: 72px;
+        line-height: 72px;
+      }
+
+      h4 {
+        font-size: 24px;
+      }
+    }
+
+    .project-display {
+      .projects {
+        .btn {
+          margin: 48px auto;
+        }
+      }
+
+      .mission {
+        margin-top: 72px;
+        margin-left: 56px;
+        margin-right: 56px;
+        margin-bottom: 72px;
+        position: relative;
+
+        #stubborn {
+          position: absolute;
+          flex-direction: column;
+          width: 100vw;
+          height: 632px;
+          left: -444px;
+          padding: 0 288px;
+          z-index: 888;
+
+          p {
+            color: #fff;
+            font-size: 38px;
+            font-weight: 400;
+            line-height: 50px;
+          }
+
+          p:first-of-type {
+            margin-bottom: 24px;
+          }
+        }
+      }
+    }
+
+
+
+    .services {
+
+      .services-0 {
+        margin-top: 32px;
+
+        .divisor {
+          margin-bottom: 16px;
+        }
+      }
+
+      .services-1 {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 52px auto;
+
+        .drop {
+          margin-top: 0;
+          width: 5%;
+        }
+
+        h3 {
+          width: 26%;
+        }
+
+        p {
+          width: 40%;
+          margin-bottom: 0px;
+        }
+      }
+
+      .quote {
+        margin: 72px auto;
+
+        h4 {
+          font-size: 2rem;
+          line-height: normal;
+        }
+      }
+    }
+
   }
 }
