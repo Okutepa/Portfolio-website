@@ -1,5 +1,44 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
+
+<?php
+require_once('includes/connect.php');
+
+// Query to fetch data
+$query = "
+    SELECT 
+        p.project_id, 
+        p.title, 
+        m.file_path AS file_path,
+        m.media_id
+    FROM projects p
+    LEFT JOIN media m 
+    ON p.project_id = m.project_id
+    WHERE p.project_id IN (1, 2, 3, 4)
+    AND m.media_type = 'desktop'
+    ORDER BY p.project_id ASC, m.media_id ASC;
+";
+
+$result = mysqli_query($connect, $query);
+
+if (!$result) {
+    die("Error fetching projects: " . mysqli_error($connect));
+}
+
+// Group images by project
+$projects = [];
+while ($row = mysqli_fetch_assoc($result)) {
+    $projects[$row['project_id']][] = $row;
+}
+
+// Assign specific projects
+$zima_images = $projects[1] ?? [];
+$hilite_images = $projects[3] ?? [];
+$ceci_image = $projects[4][0] ?? null;
+$hackathon_image = $projects[2][0] ?? null;
+?>
 
 <head>
   <meta charset="UTF-8" />
@@ -75,27 +114,30 @@
           <p>(Selected work)</p>
         </div>
 
-        <a href="case-study.html" class="col-span-full l-col-start-1 l-col-span-7 image-box box">
-          <picture>
-            <source srcset="images/hilite-buds-desktop-2.png" media="(min-width: 474px)" />
-            <img src="images/hilite-buds-mobile.png" alt="wisdom logo" />
-          </picture>
+        <!-- Zima Project -->
+      <?php if (!empty($zima_images)): ?>
+        <a href="case-study.php?id=1" class="col-span-full l-col-start-1 l-col-span-7 image-box box">
+            <picture>
+                <source srcset="images/<?php echo htmlspecialchars($zima_images[0]['file_path']); ?>" media="(min-width: 474px)">
+                <img src="images/<?php echo htmlspecialchars($zima_images[0]['file_path']); ?>" alt="Image for Zima Case Study">
+            </picture>
         </a>
-
-        <a href="case-study.html" class="col-span-full l-col-start-8 l-col-span-5 image-box-2 box">
-          <picture>
-            <source srcset="images/hilite-buds-desktop.png" media="(min-width: 474px)" />
-            <img src="images/hilite-buds-mobile-2.png" alt="wisdom logo" />
-          </picture>
-        </a>
-        <div class="col-span-full description">
-          <p>(Hilite Wireless Earbuds Project)</p>
-
-          <p>(2024)</p>
+        <?php if (isset($zima_images[1])): ?>
+            <a href="case-study.php?id=1" class="col-span-full l-col-start-8 l-col-span-5 image-box box">
+                <picture>
+                    <source srcset="images/<?php echo htmlspecialchars($zima_images[1]['file_path']); ?>" media="(min-width: 474px)">
+                    <img src="images/<?php echo htmlspecialchars($zima_images[1]['file_path']); ?>" alt="Image for Zima Case Study">
+                </picture>
+            </a>
+        <?php endif; ?>
+      <?php endif; ?>
+      <div class="col-span-full description">
+          <p>(Recent work)</p>
+          <p>(Recent work)</p>
         </div>
 
 
-        <div class="col-span-full l-col-start-3 l-col-span-8 mission">
+        <div class="col-span-full l-col-start-2 l-col-span-9 mission">
           <div class="background" id="stubborn">
             <p>
               As an experienced UX designer, I have a deep understanding of
@@ -111,42 +153,37 @@
           </div>
         </div>
 
-
-
-        <a href="" class="col-span-full image-box-3 box-move box">
-          <picture>
-            <source srcset=" images/hackathon-desktop.png" media="(min-width: 474px)" />
-            <img src="images/hackathon-mobile.png" alt="wisdom logo" />
-          </picture>
+        <?php if (!empty($hilite_images)): ?>
+        <a href="case-study.php?id=3" class="col-span-full l-col-start-1 l-col-span-7 image-box box">
+            <picture>
+                <source srcset="images/<?php echo htmlspecialchars($hilite_images[0]['file_path']); ?>" media="(min-width: 474px)">
+                <img src="images/<?php echo htmlspecialchars($hilite_images[0]['file_path']); ?>" alt="Image for Zima Case Study">
+            </picture>
         </a>
-
-
-        <div class="col-span-full description" id="hack">
+        <?php if (isset($hilite_images[1])): ?>
+            <a href="case-study.php?id=3" class="col-span-full l-col-start-8 l-col-span-5 image-box box">
+                <picture>
+                    <source srcset="images/<?php echo htmlspecialchars($hilite_images[1]['file_path']); ?>" media="(min-width: 474px)">
+                    <img src="images/<?php echo htmlspecialchars($hilite_images[1]['file_path']); ?>" alt="Image for Zima Case Study">
+                </picture>
+            </a>
+        <?php endif; ?>
+      <?php endif; ?>
+      <div class="col-span-full description">
           <p>(Recent work)</p>
           <p>(Recent work)</p>
         </div>
 
 
-        <div class="col-span-full description">
-          <p>(Recent work)</p>
-          <p>(Recent work)</p>
-        </div>
 
-        <a href="case-study.html" class="col-span-full l-col-start-1 l-col-span-7 image-box-3 box">
-          <picture>
-            <source srcset="images/zima-project-desktop-1.png" media="(min-width: 474px)" />
-            <img src="images/zima-project-mobile-1.png" alt="wisdom logo" />
-          </picture>
-        </a>
-
-        <a href="case-study.html" class="col-span-full l-col-start-8 l-col-span-5 image-box-2 box">
-          <picture>
-            <source srcset="images/zima-project-desktop-2.png" media="(min-width: 474px)" />
-            <img src="images/zima-project-mobile-2.png" alt="wisdom logo" />
-          </picture>
-        </a>
-
-
+        <?php if (!empty($hackathon_image)): ?>
+    <a href="case-study.php?id=2" class="col-span-full image-box box">
+        <picture>
+            <source srcset="images/<?php echo htmlspecialchars($hackathon_image['file_path']); ?>" media="(min-width: 474px)">
+            <img src="images/<?php echo htmlspecialchars($hackathon_image['file_path']); ?>" alt="Image for Hackathon Case Study">
+        </picture>
+    </a>
+    <?php endif; ?>
         <div class="col-span-full description">
           <p>(Recent work)</p>
           <p>(Recent work)</p>
@@ -239,6 +276,24 @@
     </div>
   </footer>
 
+
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@latest/bundled/lenis.min.js"></script>
+  <script>
+    const lenis = new Lenis()
+    lenis.on('scroll', (e) => {
+      console.log(e)
+    })
+
+    function raf(time) {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
+
+    requestAnimationFrame(raf)
+
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
   <script src="js/main.js"></script>
 </body>

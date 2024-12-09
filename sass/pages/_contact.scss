@@ -1,0 +1,56 @@
+body {
+    .contact-form {
+        .form {
+            .jon-doe {
+                margin-bottom: 62px;
+                position: relative;
+
+                .jon-p {
+                    display: flex;
+                    gap: 24px;
+
+
+                    p {
+                        display: inline-block;
+                        font-size: 32px;
+                        line-height: 41.6px;
+
+                        // padding-right: 20px;
+                    }
+
+                    p:last-of-type {
+                        width: 76%;
+                    }
+
+                }
+
+
+
+
+
+                // p:last-of-type {
+                //     padding-right: 0px;
+                //     width: 80%;
+                // }
+
+                input {
+                    border: none;
+                    font-size: 24px;
+                    margin-top: 16px;
+
+                    &::placeholder {
+                        opacity: 0.6;
+                    }
+                }
+            }
+
+            .jon-doe::before {
+                content: '';
+                position: absolute;
+                width: 100%;
+                border: 1px solid rgb(0, 0, 0);
+                top: -28px;
+            }
+        }
+    }
+}
