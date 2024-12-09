@@ -57,6 +57,14 @@ body {
     }
 
 
+    .image-box {
+        img {
+            width: 100%;
+        }
+    }
+
+
+
 
     footer {
         #case-study-footer {
@@ -99,6 +107,12 @@ body {
                 }
             }
 
+
+            #case-study-hack {
+                height: 638px;
+            }
+
+
             #reflections {
                 margin-top: 72px;
 
@@ -106,6 +120,14 @@ body {
                     margin-bottom: 0px;
                 }
 
+            }
+        }
+
+
+        .image-box {
+            img {
+                width: 100%;
+                height: 100%;
             }
         }
 

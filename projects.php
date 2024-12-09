@@ -1,3 +1,47 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<?php
+require_once('includes/connect.php');
+
+// Fetch data
+$query = "
+    SELECT 
+        p.project_id, 
+        p.title, 
+        m.file_path AS file_path,
+        m.media_id
+    FROM projects p
+    LEFT JOIN media m 
+    ON p.project_id = m.project_id
+    WHERE p.project_id IN (1, 2, 3, 4)
+    AND m.media_type = 'desktop' -- Only desktop images
+    ORDER BY p.project_id ASC, m.media_id ASC;
+";
+
+$result = mysqli_query($connect, $query);
+
+if (!$result) {
+    die("Error fetching projects: " . mysqli_error($connect));
+}
+
+// Group images by project
+$projects = [];
+while ($row = mysqli_fetch_assoc($result)) {
+    $projects[$row['project_id']][] = $row;
+}
+
+$zima_images = $projects[1] ?? [];       // Zima Project (2 images)
+$hilite_images = $projects[2] ?? [];    // Hilite Project (2 images)
+$hackathon_image = $projects[4][0] ?? null; // Hackathon Project (1 image)
+$ceci_image = $projects[3][0] ?? null;
+?>
+
+
+
 <?php
 require_once('includes/connect.php');
 
@@ -24,14 +68,16 @@ $images = mysqli_fetch_all($image_results, MYSQLI_ASSOC);
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+    <title>Portfolio Homepage</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="css/grid.css" />
     <link rel="stylesheet" href="css/main.css" />
     <title>Case Study Page</title>
+
 </head>
 
 <body>
@@ -53,14 +99,15 @@ $images = mysqli_fetch_all($image_results, MYSQLI_ASSOC);
                     </li>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Me</a></li>
-                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="project.php">Projects</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
 
                 <ul>
                     <li class="hidemobile"><a href="index.html">Home</a></li>
                     <li class="hidemobile"><a href="about.html">About Me</a></li>
-                    <li class="hidemobile"><a href="projects.html">Projects</a></li>
+                    <li class="hidemobile"><a href="project.php">Projects</a></li>
+
                     <li class="hidemobile"><a href="contact.html">Contact</a></li>
                     <li class="hideondesktop">
                         <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
@@ -75,6 +122,90 @@ $images = mysqli_fetch_all($image_results, MYSQLI_ASSOC);
     </header>
 
     <main>
+
+
+    <section class="grid-con main-sec" id="contact-head">
+            <div class="col-span-full l-col-start-1 l-col-span-9 hero-text">
+                <h1>Selected <br><span class="gradient-text">All Projects</span></h1>
+            </div>
+        </section>
+
+    <section class="grid-con" id="projects-play">
+    <!-- Zima Project -->
+    <?php if (!empty($zima_images)): ?>
+        <a href="case-study.php?id=1" class="col-span-full l-col-start-1 l-col-span-7 image-box box first-pro">
+            <picture>
+                <source srcset="images/<?php echo htmlspecialchars($zima_images[0]['file_path']); ?>" 
+                        media="(min-width: 474px)">
+                <img src="images/<?php echo htmlspecialchars($zima_images[0]['file_path']); ?>" 
+                     alt="Image for Zima Case Study">
+            </picture>
+        </a>
+        <?php if (isset($zima_images[1])): ?>
+            <a href="case-study.php?id=1" class="col-span-full l-col-start-8 l-col-span-5 image-box box first-pro">
+                <picture>
+                    <source srcset="images/<?php echo htmlspecialchars($zima_images[1]['file_path']); ?>" 
+                            media="(min-width: 474px)">
+                    <img src="images/<?php echo htmlspecialchars($zima_images[1]['file_path']); ?>" 
+                         alt="Image for Zima Case Study">
+                </picture>
+            </a>
+        <?php endif; ?>
+    <?php endif; ?>
+
+    <!-- Ceci Project -->
+    <?php if (!empty($ceci_image)): ?>
+        <a href="case-study.php?id=3" class="col-span-full image-box box first-pro">
+            <picture>
+                <source srcset="images/<?php echo htmlspecialchars($ceci_image['file_path']); ?>" 
+                        media="(min-width: 474px)">
+                <img src="images/<?php echo htmlspecialchars($ceci_image['file_path']); ?>" 
+                     alt="Image for Ceci Case Study">
+            </picture>
+        </a>
+    <?php endif; ?>
+
+    <!-- Hilite Project -->
+    <?php if (!empty($hilite_images)): ?>
+        <a href="case-study.php?id=2" class="col-span-full l-col-start-1 l-col-span-7 image-box box">
+            <picture>
+                <source srcset="images/<?php echo htmlspecialchars($hilite_images[0]['file_path']); ?>" 
+                        media="(min-width: 474px)">
+                <img src="images/<?php echo htmlspecialchars($hilite_images[0]['file_path']); ?>" 
+                     alt="Image for Hilite Case Study">
+            </picture>
+        </a>
+        <?php if (isset($hilite_images[1])): ?>
+            <a href="case-study.php?id=2" class="col-span-full l-col-start-8 l-col-span-5 image-box box">
+                <picture>
+                    <source srcset="images/<?php echo htmlspecialchars($hilite_images[1]['file_path']); ?>" 
+                            media="(min-width: 474px)">
+                    <img src="images/<?php echo htmlspecialchars($hilite_images[1]['file_path']); ?>" 
+                         alt="Image for Hilite Case Study">
+                </picture>
+            </a>
+        <?php endif; ?>
+    <?php endif; ?>
+
+    <!-- Hackathon Project -->
+
+    <?php if (!empty($hackathon_image)): ?>
+    <a href="case-study.php?id=4" class="col-span-full image-box box" id="bottom-pro">
+        <picture>
+            <source srcset="images/<?php echo htmlspecialchars($hackathon_image['file_path']); ?>" 
+                    media="(min-width: 474px)">
+            <img src="images/<?php echo htmlspecialchars($hackathon_image['file_path']); ?>" 
+                 alt="Image for Hackathon Case Study">
+        </picture>
+    </a>
+<?php endif; ?>
+</section>
+
+    </main>
+
+    <footer>
+        <div class="grid-con foot">
+
         <section class="grid-con main-sec" id="contact-head">
             <div class="col-span-full l-col-start-1 l-col-span-13 hero-text" id="main-hero-text">
                 <h1 id="hero-h">IDP Student<br><span class="gradient-text">Portfolio Showcase</span></h1>
@@ -179,6 +310,7 @@ $images = mysqli_fetch_all($image_results, MYSQLI_ASSOC);
     </main>
     <footer>
         <div class="grid-con foot" id="case-study-footer">
+
             <div class="col-span-full foot-content">
                 <h5>Connect</h5>
                 <h2>Let’s create your next big idea.</h2>
@@ -197,6 +329,10 @@ $images = mysqli_fetch_all($image_results, MYSQLI_ASSOC);
             </div>
         </div>
     </footer>
+
+</body>
+
+</html>
 
     <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
     <script src="js/main.js"></script>
