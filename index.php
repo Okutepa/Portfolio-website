@@ -67,14 +67,14 @@ $hackathon_image = $projects[2][0] ?? null;
                   d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
               </svg></a>
           </li>
-          <li><a href="index.html">Home</a></li>
+          <li><a href="index.php">Home</a></li>
           <li><a href="about.html">About Me</a></li>
           <li><a href="projects.php">Projects</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
 
         <ul>
-          <li class="hidemobile"><a href="index.html">Home</a></li>
+          <li class="hidemobile"><a href="index.php">Home</a></li>
           <li class="hidemobile"><a href="about.html">About Me</a></li>
           <li class="hidemobile"><a href="projects.php">Projects</a></li>
           <li class="hidemobile"><a href="contact.html">Contact</a></li>
