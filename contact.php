@@ -60,7 +60,7 @@
     </section>
 
     <section class="contact-form grid-con">
-      <form class="form col-span-full l-col-start-1 l-col-span-8">
+      <form method="post" action="sendmail.php" class="form col-span-full l-col-start-1 l-col-span-8">
         <div class="jon-doe">
           <div class="jon-p">
             <p>01</p>
@@ -102,7 +102,6 @@
 
         <div class="form-btn">
           <div class="underline-con">
-
           </div>
           <input type="submit" value="Send" class="send">
         </div>
