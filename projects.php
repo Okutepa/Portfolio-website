@@ -201,43 +201,7 @@ $images = mysqli_fetch_all($image_results, MYSQLI_ASSOC);
 <?php endif; ?>
 </section>
 
-    </main>
-
-    <footer>
-        <div class="grid-con foot">
-
-        <section class="grid-con main-sec" id="contact-head">
-            <div class="col-span-full l-col-start-1 l-col-span-13 hero-text" id="main-hero-text">
-                <h1 id="hero-h">IDP Student<br><span class="gradient-text">Portfolio Showcase</span></h1>
-                <p>Re-brand for the Zima Beer Product to have a more exciting and
-                    freshly modern design aesthetics.
-                </p>
-            </div>
-            <div class="col-span-full">
-                <div class="tools">
-                    <img src="images/illustrator.svg" alt="">
-                    <img src="images/figma-icon.svg" alt="">
-                    <img src="images/github.svg" alt="">
-                    <img src="images/after-effects.svg" alt="">
-                </div>
-            </div>
-        </section>
-
-        <section class="grid-con">
-    <?php foreach ($images as $image): ?>
-        <a href="case-study.php?id=<?php echo $project_id; ?>" class="col-span-full l-col-start-1 l-col-span-7 image-box box">
-            <picture>
-                <?php if ($image['media_type'] === 'desktop'): ?>
-                    <source srcset="images/<?php echo $image['image_name']; ?>" media="(min-width: 474px)">
-                <?php elseif ($image['media_type'] === 'mobile'): ?>
-                    <img src="images/<?php echo $image['image_name']; ?>" alt="Project Image">
-                <?php endif; ?>
-            </picture>
-        </a>
-    <?php endforeach; ?>
-</section>
-
-    </main>
+    
     <footer>
         <div class="grid-con foot" id="case-study-footer">
 
