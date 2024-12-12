@@ -67,16 +67,16 @@ foreach ($images as $image) {
                                     d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
                             </svg></a>
                     </li>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.php">Home</a></li>
                     <li><a href="about.html">About Me</a></li>
-                    <li><a href="project.php">Projects</a></li>
+                    <li><a href="projects.php">Projects</a></li>
                     <li><a href="contact.php">Contact</a></li>
                 </ul>
 
                 <ul>
-                    <li class="hidemobile"><a href="index.html">Home</a></li>
+                    <li class="hidemobile"><a href="index.php">Home</a></li>
                     <li class="hidemobile"><a href="about.html">About Me</a></li>
-                    <li class="hidemobile"><a href="project.php">Projects</a></li>
+                    <li class="hidemobile"><a href="projects.php">Projects</a></li>
                     <li class="hidemobile"><a href="contact.php">Contact</a></li>
                     <li class="hideondesktop">
                         <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
@@ -210,10 +210,10 @@ foreach ($images as $image) {
 
                 <nav class="footer-nav">
                     <ul>
-                        <li><a href="">Home</a></li>
-                        <li><a href="">About me</a></li>
-                        <li><a href="">Projects</a></li>
-                        <li><a href="">Contact</a></li>
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="about.html">About me</a></li>
+                        <li><a href="projects.php">Projects</a></li>
+                        <li><a href="contact.php">Contact</a></li>
                     </ul>
                 </nav>
 
