@@ -70,14 +70,14 @@ $hackathon_image = $projects[2][0] ?? null;
           <li><a href="index.php">Home</a></li>
           <li><a href="about.html">About Me</a></li>
           <li><a href="projects.php">Projects</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="contact.php">Contact</a></li>
         </ul>
 
         <ul>
           <li class="hidemobile"><a href="index.php">Home</a></li>
           <li class="hidemobile"><a href="about.html">About Me</a></li>
           <li class="hidemobile"><a href="projects.php">Projects</a></li>
-          <li class="hidemobile"><a href="contact.html">Contact</a></li>
+          <li class="hidemobile"><a href="contact.php">Contact</a></li>
           <li class="hideondesktop">
             <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
                 fill="#000">
@@ -264,10 +264,10 @@ $hackathon_image = $projects[2][0] ?? null;
 
         <nav class="footer-nav">
           <ul>
-            <li><a href="">Home</a></li>
-            <li><a href="">About me</a></li>
-            <li><a href="">Projects</a></li>
-            <li><a href="">Contact</a></li>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="about.html">About me</a></li>
+            <li><a href="projects.php">Projects</a></li>
+            <li><a href="contact.php">Contact</a></li>
           </ul>
         </nav>
 
